@@ -1,0 +1,11 @@
+@import "partials/lib/_reset";
+@import "partials/lib/_util";
+@import "partials/lib/_intro-animation";
+
+@import "partials/_base";
+@import "partials/background/_background--setup";
+@import "partials/background/_background--animation";
+
+@import "partials/_panel--base";
+@import "partials/panels/_panel--intro";
+@import "partials/panels/_panel--work";

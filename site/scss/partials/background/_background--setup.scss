@@ -1,0 +1,125 @@
+$blobColor: $main;
+$backColor: #fff;
+
+.background-wrap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100%;
+	overflow: hidden;
+	background-color: $backColor;
+	z-index: $zBackground;
+
+	&:before, &:after {
+		content: '';
+		background: $blobColor;
+		height: 10vh;
+		width: 100vw;
+		position: absolute;
+		display: block;
+		left: 0;
+		right: 0;
+		z-index: $zBackgroundTop;
+	}
+
+	&:before {
+		top: 0;
+	}
+
+	&:after {
+		bottom: 0;
+	}
+
+	//BLOB DOTS
+	.blobs {
+		filter: url("#goo");
+		height: 100vh;
+		width: 120vw;
+		left: -10vw;
+	}
+	.backing {
+		position: absolute;
+		display: block;
+		background-color: $blobColor;
+		width: 120vw;
+		height: 10vh;
+		left: -10vw;
+		z-index: $zBackgroundTop;
+		// display: none;
+
+		&.top {
+			top: -5vh;
+		}
+
+		&.bottom {
+			bottom: -5vh;
+		}
+	}
+	.blob {
+		display: block;
+	  background-color: $blobColor;
+	  position: absolute;
+	  border-radius: 100%;
+
+		&.top {
+	    top: -15vh;
+	    left: -15vw;
+
+	    @for $i from 1 through 5 {
+	      &:nth-of-type(#{$i}) {
+	        height: (random(20) + 25) * 1vh;
+	        width: (random(50) + 25) * 1vw;
+					min-height: 30vh;
+					min-width: 50vw
+	      }
+	    }
+
+	    &:nth-of-type(2) {
+	      left: 25%;
+	    }
+
+	    &:nth-of-type(3) {
+	      left: 50%;
+	    }
+
+	    &:nth-of-type(4) {
+	      left: 75%;
+	    }
+
+			&:nth-of-type(5) {
+				left: 100%;
+			}
+	  }
+
+		&.bottom {
+	    bottom: -15vh;
+	    left: -15vw;
+
+	    @for $i from 6 through 10 {
+	      &:nth-of-type(#{$i}) {
+	        height: (random(20) + 25) * 1vh;
+	        width: (random(35) + 35) * 1vw;
+					min-height: 30vh;
+					min-width: 50vw
+	      }
+	    }
+
+	    &:nth-of-type(7) {
+	      left: 25%;
+	    }
+
+	    &:nth-of-type(8) {
+	      left: 50%;
+	    }
+
+			&:nth-of-type(9) {
+				left: 75%;
+			}
+
+			&:nth-of-type(10) {
+				left: 100%;
+			}
+	  }
+	}
+}

@@ -1,0 +1,30 @@
+
+//util classes
+.relative {
+	position: relative;
+}
+
+//util mixins
+@mixin absCenter {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin backgroundSwitch($panelName) {
+	&.#{$panelName}-panel-active + .background-container svg .layer-#{$panelName} {
+		& > g.pattern-node {
+			& > * {
+				transform: scale(0);
+				animation: none;
+				opacity: 0;
+			}
+
+			& > .pattern-node-word {
+				transform: scale(1);
+				opacity: 1;
+			}
+		}
+	}
+}

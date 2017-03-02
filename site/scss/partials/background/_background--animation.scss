@@ -1,0 +1,44 @@
+$topBlobs: 5;
+$bottomBlobs: 10; //start at 5
+
+@for $i from 1 through $topBlobs {
+  @keyframes bounceUp-#{$i} {
+    0% {
+      transform: translateY(random(25) + -25 + px) scale(1.15);
+    }
+    33% {
+      transform: translateY(random(50) + 50 + px) scale(0.9);
+    }
+    66% {
+      transform: translateY(random(25) + -25 + px) scale(1.1);
+    }
+    100% {
+      transform: translateY(random(50) + 50 + px) scale(0.85);
+    }
+  }
+  .blob.top:nth-of-type(#{$i}) {
+    animation: bounceUp-#{$i} random(25) + 15s ease infinite;
+    animation-direction: alternate-reverse;
+  }
+}
+
+@for $i from 5 through $bottomBlobs {
+  @keyframes bounceDown-#{$i} {
+		0% {
+      transform: translateY(random(25) + -50 + px) scale(1.15);
+    }
+    33% {
+      transform: translateY(random(50) + -100 + px) scale(0.9);
+    }
+    66% {
+      transform: translateY(random(25) + -50 + px) scale(1.1);
+    }
+    100% {
+      transform: translateY(random(50) + -100 + px) scale(0.85);
+    }
+  }
+  .blob.bottom:nth-of-type(#{$i}) {
+    animation: bounceDown-#{$i} random(25) + 15s ease infinite;
+    animation-direction: alternate-reverse;
+  }
+}

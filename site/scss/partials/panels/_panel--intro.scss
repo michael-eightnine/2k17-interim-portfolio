@@ -1,0 +1,63 @@
+.panel-intro {
+	.panel-node {
+		// height: 52.6vh;
+
+		.wordmark {
+			width: 360px;
+			max-width: 100%;
+			position: relative;
+			left: 50%;
+			transform: translateX(-50%);
+
+			svg {
+				display: block;
+				overflow: visible;
+			}
+		}
+
+		.link-list {
+			margin-top: 20px;
+			-webkit-backface-visibility: hidden;
+	    animation-name: nameFade;
+	    animation-duration: 1.2s;
+	    animation-timing-function: ease-out;
+	    animation-fill-mode: forwards;
+
+			white-space: nowrap;
+
+			a {
+				font-size: 13px;
+			}
+		}
+	}
+}
+
+//logo animation settings
+#logo-firstname,
+#logo-lastname {
+	animation-duration: 0.5s;
+	animation-timing-function: ease-in;
+	animation-fill-mode: forwards;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
+#logo-firstname {
+	animation-name: leftSlide;
+	transform: translateX(-200px); //used to be 150, adjusted to account for shorter names vs. joe's wordmark
+}
+
+#logo-lastname {
+	animation-name: rightSlide;
+	transform: translateX(200px); //used to be 150, adjusted to account for shorter names vs. joe's wordmark
+}
+
+#logo-slash {
+	animation-name: slashSquash;
+	animation-duration: 0.6s;
+	animation-timing-function: ease-in;
+	animation-fill-mode: forwards;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	transform-origin: center;
+}

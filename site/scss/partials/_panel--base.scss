@@ -1,0 +1,22 @@
+.panel {
+	width: 100%;
+	height: 100vh;
+	background-color: transparent;
+	overflow: hidden;
+
+	//panel nodes
+	.panel-node {
+		@include absCenter();
+		background-color: #fff;
+		padding: 20px;
+
+		//node children styles
+		h2 {
+			font-family: $copy;
+			font-size: 16px;
+			margin-bottom: 20px;
+			// font-weight: bold;
+			letter-spacing: 1px;
+		}
+	}
+}
